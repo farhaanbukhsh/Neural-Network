@@ -1,4 +1,4 @@
-from neural_network import Neural_Network
+from neural_network import NeuralNetwork
 import numpy
 
 # Setting up the value for the neural network
@@ -8,7 +8,7 @@ output_nodes = 10
 learning_rate = 0.3
 
 # Initializing the neural network
-neural_network_object = Neural_Network(input_nodes, hidden_nodes,
+neural_network_object = NeuralNetwork(input_nodes, hidden_nodes,
                                        output_nodes, learning_rate)
 
 training_file = open('mnist_train_100.csv', 'r')

@@ -2,7 +2,7 @@ import numpy
 import scipy.special
 
 
-class Neural_Network:
+class NeuralNetwork:
     """ This is the first implementation of the Neural_Network
     """
     def __init__(self, input_nodes, hidden_nodes, output_nodes, learning_rate):
