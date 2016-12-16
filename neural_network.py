@@ -24,7 +24,7 @@ class Neural_Network:
         # thereshold value just like in neurons
         self.activation_function = lambda x: scipy.special.expit(x)
 
-    def train(self, input_list):
+    def train(self, input_list, target_list):
         """ To train the neural network
         """
         input_2darray = numpy.array(input_list, ndmin=2).T
@@ -32,6 +32,24 @@ class Neural_Network:
         hidden_output = self.activation_function(hidden_input)
         final_input = numpy.dot(self.who, hidden_output)
         final_output = self.activation_function(final_input)
+
+        # This is the error calculation part from the output calculated by the
+        # neural network
+        target = numpy.array(target_list, ndmin=2).T
+        output_errors = target - final_output
+
+        # backpropogation of error to the hidden layer for error division
+        # according to the weight of the link
+        hidden_error = numpy.dot(self.who.T, output_errors)
+
+        # This is the heart of training the machine it calculates the error and
+        # updates the weight accordingly hence making the machine more accurate
+
+        self.who += self.learning_rate*numpy.dot((output_errors*final_output*(1-final_output)),
+                                                numpy.transpose(hidden_output))
+
+        self.wih += self.learning_rate*numpy.dot((hidden_error*hidden_output*(1-hidden_output)),
+                                                numpy.transpose(input_2darray))
 
     def query(self, input_list):
         """ To query the neural network
