@@ -11,7 +11,7 @@ learning_rate = 0.3
 neural_network_object = NeuralNetwork(input_nodes, hidden_nodes,
                                        output_nodes, learning_rate)
 
-training_file = open('mnist_train_100.csv', 'r')
+training_file = open('mnist_train.csv', 'r')
 training_list = training_file.readlines()
 training_file.close()
 
@@ -22,7 +22,7 @@ for record in training_list:
     target[int(values[0])] = 0.99
     neural_network_object.train(input_array, target)
 
-test_file = open('mnist_test_10.csv', 'r')
+test_file = open('mnist_test.csv', 'r')
 test_list = test_file.readlines()
 test_file.close()
 
@@ -38,6 +38,8 @@ def scorecard_generation(record):
     else:
         return 0
 
-scorecard =  map(lambda record: scorecard_generation(record), test_list)
+
+scorecard = map(lambda record: scorecard_generation(record), test_list)
 print scorecard
-print "Accuracy is :", (sum(scorecard)/10.00)
+print len(scorecard)
+print "Accuracy is :", (sum(scorecard)/10000.00)
