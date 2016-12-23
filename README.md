@@ -22,7 +22,7 @@ After installing all the dependency you can directly run:
 
 You should see something like:
 
-    ![train_and_work](train_work.png)
+![train_and_work](train_work.png)
 
 
 Scorecard is just a way to test the accuracy of the ANN, I have used small datasets to test it, you can always replace it with the original dataset.
@@ -31,11 +31,11 @@ Scorecard is just a way to test the accuracy of the ANN, I have used small datas
 
 I have done few analysis over the ANN , like what happen when you train a ANN multiple times with the same data.
 
-    ![stress_train_print.png](stress_train_print.png)
+![stress_train_print.png](stress_train_print.png)
 
  and  I took the liberty to add some visualization to it. FYI on my 4 GIGS machine it took around 40-60 min to produce the output.
 
-    ![stress_train.png](stress_train.png)
+![stress_train.png](stress_train.png)
 
 What if I increase the `learning rate` of the ANN and then query well you certainly get surprising result.
 
@@ -43,11 +43,11 @@ What if I increase the `learning rate` of the ANN and then query well you certai
 
 This gives:
 
-    ![learning_rate_print.png](learning_rate_print.png)
+ ![learning_rate_print.png](learning_rate_print.png)
 
 and you can plot it:
 
-    ![learning_rate.png](learning_rate.png)
+ ![learning_rate.png](learning_rate.png)
 
 ## Findings
 
